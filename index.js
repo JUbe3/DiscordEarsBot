@@ -59,7 +59,7 @@ const SETTINGS_FILE = 'settings.json';
 
 let DISCORD_TOK = null;
 let WITAI_TOK = null; 
-let SPEECH_METHOD = 'vosk'; // witai, google, vosk
+let SPEECH_METHOD = 'google'; // witai, google, vosk
 
 function loadConfig() {
     if (fs.existsSync(SETTINGS_FILE)) {
@@ -420,7 +420,7 @@ async function transcribe_gspeech(buffer) {
       const config = {
         encoding: 'LINEAR16',
         sampleRateHertz: 48000,
-        languageCode: 'en-US',  // https://cloud.google.com/speech-to-text/docs/languages
+          languageCode: 'ja-JP',  // https://cloud.google.com/speech-to-text/docs/languages
       };
       const request = {
         audio: audio,
